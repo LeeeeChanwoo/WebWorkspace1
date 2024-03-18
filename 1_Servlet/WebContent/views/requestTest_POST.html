@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>post방식 요청 후 응답페이지 받아보기</title>
+</head>
+<body>
+<h1>post방식으로 요청 후 응답페이지 받아보기</h1>
+
+<p>
+특징1. post방식으로 요청하는건 url의 body영역에 데이터를 포함시켜서 요청 <br>
+-> 사용자가 입력한 값(데이터)들이 url에 노출되지 않음 <br>
+-> 보안유지가 가능함 <br>
+-> 즉 로그인이나 회원가입 같은 경우 post 방식이 적합함<br>
+특징2. body영역은 전송할 수 있는 길이에 제한이 없다<br>
+-> 즉 게시판 작성같은 경우 post 방식이 적합함<br>
+
+특징3. 즐겨찾기는 가능하나, 전달되는 데이턱 url에 노출되어있지 않기 때문에 항상 같은 화면만 보게된다<br>
+-> 즉 즐겨찾기에 적합하지 않다<br>
+
+특징4. 최대 요청 받는 시간이 존재해서 페이지 요청, 기다리는 시간이 있다<br>
+</p>
+<form action="/servlet/test2.do" method="post">
+		<ul>
+			<li>이름 : <input type="text" name="name">
+			</li>
+			<li>남자 : <input type="radio" name="gender" value="M"> 여자
+				: <input type="radio" name="gender" value="F">
+			</li>
+			<li>나이 : <input type="number" name="age">
+			</li>
+			<li>사는 도시 : <select name="city">
+					<option>서울시</option>
+					<option>강원시</option>
+					<option>제주시</option>
+			</select>
+			</li>
+			<li>키 : <input type="range" name="height" min="150" max="200">
+			</li>
+			<li>좋아하는 음식 : 한식 <input type="checkbox" name="food" value="한식">
+				일식 <input type="checkbox" name="food" value="일식"> 중식 <input
+				type="checkbox" name="food" value="중식">
+			</li>
+			<li><input type="submit"></li>
+		</ul>
+	</form>
+</body>
+</html>
